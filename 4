@@ -1,0 +1,37 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi gaya
+def gaya(x):
+  return 2*x**2 + 4*x + 2
+
+# Batas integrasi (jarak yang ditempuh)
+a = 0  # Titik awal
+b = 30  # Titik akhir
+
+# Jumlah partisi (semakin banyak, semakin akurat)
+n = 1000
+
+# Menghitung lebar setiap partisi
+dx = (b-a)/n
+
+# Inisialisasi variabel untuk menyimpan nilai usaha
+usaha = 0
+
+# Integrasi numerik menggunakan metode trapesium
+for i in range(n):
+  x_i = a + i*dx
+  x_i1 = a + (i+1)*dx
+  usaha += 0.5*(gaya(x_i) + gaya(x_i1))*dx
+
+print("Usaha total yang dilakukan:", usaha, "Joule")
+
+# Visualisasi gaya terhadap jarak
+x = np.linspace(a, b, n)
+y = gaya(x)
+plt.plot(x, y)
+plt.xlabel("Jarak (m)")
+plt.ylabel("Gaya (N)")
+plt.title("Grafik Gaya terhadap Jarak")
+plt.grid(True)
+plt.show()
