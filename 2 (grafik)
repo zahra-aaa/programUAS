@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+A = 0.05  # Amplitudo (m)
+T = 10    # Periode (s)
+omega = 2*np.pi/T
+
+# Waktu (s)
+t = np.linspace(0, 50, 1000)  # 1000 titik data dari 0 hingga 50 detik
+
+# Persamaan posisi
+x = A * np.sin(omega*t)
+
+# Plot grafik
+plt.plot(t, x)
+plt.xlabel('Waktu (s)')
+plt.ylabel('Posisi (m)')
+plt.title('Gerak Harmonis Sederhana')
+plt.grid(True)
+plt.show()
