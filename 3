@@ -1,0 +1,31 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Parameter
+v0 = 50  # m/s
+g = -10  # m/s²
+
+# Waktu (dalam detik)
+t = np.arange(0, 5, 0.1)  # Waktu dari 0 hingga 5 detik dengan interval 0.1 detik
+
+# Hitung posisi
+y = v0*t + 0.5*g*t**2
+
+# Cari waktu saat mencapai tinggi maksimum
+t_max = -v0 / g
+
+# Hitung tinggi maksimum
+y_max = v0*t_max + 0.5*g*t_max**2
+
+# Plot grafik
+plt.plot(t, y)
+plt.xlabel('Waktu (s)')
+plt.ylabel('Ketinggian (m)')
+plt.title('Gerak Vertikal ke Atas')
+plt.grid(True)
+
+# Tandai titik tertinggi
+plt.plot(t_max, y_max, 'ro', label='Tinggi Maksimum')
+plt.legend()
+
+plt.show()
