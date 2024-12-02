@@ -1,0 +1,19 @@
+import math
+
+def posisi_benda(t):
+  """Fungsi untuk menghitung posisi benda pada waktu t"""
+  A = 5  # cm
+  omega = math.pi / 5  # rad/s
+  x = A * math.cos(omega * t)
+  return x
+
+# Rentang waktu
+waktu_awal = 0
+waktu_akhir = 50
+langkah_waktu = 0.1
+
+# Hitung posisi pada setiap waktu
+for t in range(waktu_awal, int(waktu_akhir/langkah_waktu) + 1):
+  t_sebenarnya = t * langkah_waktu
+  posisi = posisi_benda(t_sebenarnya)
+  print(f"Waktu: {t_sebenarnya} s, Posisi: {posisi} cm")
