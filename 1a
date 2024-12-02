@@ -1,0 +1,27 @@
+def hitung_gaya_pegas(k, x):
+  """
+  Fungsi untuk menghitung gaya pada pegas.
+
+  Args:
+    k: Konstanta pegas (N/m)
+    x: Pertambahan panjang pegas (m)
+
+  Returns:
+    Gaya pada pegas (N)
+  """
+
+  return k * x
+
+# Input konstanta pegas (sesuaikan dengan nilai sebenarnya)
+k = 60  # Contoh: Konstanta pegas 60 N/m
+
+# Batas pertambahan panjang dan langkah
+x_awal = 0
+x_akhir = 0.5
+delta_x = 0.02
+
+# Iterasi untuk menghitung gaya pada setiap langkah
+for x in range(x_awal, int(x_akhir/delta_x)+1):
+  x = x * delta_x
+  gaya = hitung_gaya_pegas(k, x)
+  print(f"Ketika pegas diregangkan sejauh {x} meter, gaya yang bekerja adalah {gaya} Newton")
