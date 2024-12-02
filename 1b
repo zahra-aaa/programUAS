@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Konstanta pegas (N/m)
+k = 60
+
+# Rentang pergerakan pegas (m)
+x = np.arange(0, 0.5, 0.02)
+
+# Hitung gaya pegas menggunakan Hukum Hooke: F = k*x
+F = k * x
+
+# Visualisasi grafik
+plt.plot(x, F)
+plt.xlabel('Pertambahan Panjang (m)')
+plt.ylabel('Gaya Pegas (N)')
+plt.title('Grafik Gaya Pegas vs Pertambahan Panjang')
+plt.grid(True)
+plt.show()
